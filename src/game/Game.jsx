@@ -1,3 +1,5 @@
+import {GameItemCtrl} from "./gameItem/GameItemCtrl.jsx";
+
 export class Game {
     constructor() {
         this.canvas = document.getElementById('game');
@@ -6,13 +8,19 @@ export class Game {
         this.canvas.width = 300;
         this.canvas.height = 300;
 
-        this.ctx.fillStyle = 'blue';
-        this.ctx.fillRect(20, 20, 30, 50);
+        this.items = [];
+        this.items.push(new GameItemCtrl('red', [0, 0, 10, 10]));
 
-        this.cat = new Image();
-        this.cat.src = './static/cat.jpeg';
-        this.cat.onload = () => {
-            this.ctx.drawImage(this.cat, 40, 40);
-        }
+        this.draw();
+    }
+
+    changeColor() {
+        this.items.forEach((item) => item.setNewColor());
+    }
+
+    draw() {
+        this.ctx.clearRect(0, 0, 300, 300);
+        this.items.forEach((item) => item.animate(this.ctx));
+        requestAnimationFrame(() => this.draw());
     }
 }
