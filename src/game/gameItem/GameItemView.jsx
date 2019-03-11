@@ -5,6 +5,6 @@ export class GameItemView {
 
     animate(ctx) {
         ctx.fillStyle = this.model.type;
-        ctx.fillRect.apply(ctx, [10, 10, 50, 60]);
+        ctx.fillRect.apply(ctx, [this.model.position.x, this.model.position.y, 50, 60]);
     }
 }

@@ -10,6 +10,14 @@ export class GameItemCtrl {
         this.model.setType(type);
     }
 
+    moveUp() {
+        this.model.moveUp();
+    }
+
+    moveDown() {
+        this.model.moveDown();
+    }
+
     setNewColor() {
         this.model.setRandomColor();
     }

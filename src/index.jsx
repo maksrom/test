@@ -8,6 +8,8 @@ class App extends React.Component {
     constructor(props, state) {
         super(props, state);
 
+        this.game = new Game();
+
         this.state = {
             list: [
                 { name: 'aaaa', color: 'red' },
@@ -19,28 +21,28 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={() => this.playGame()}>Play</button>
-                <button onClick={() => this.newColor()}>new color</button>
-                <button onClick={() => this.addItem()}>Add</button>
-                <ul>
-                    {this.state.list.map((item, i) => (
-                        <TodoItem key={i}
-                                  name={item.name}
-                                  color={item.color}
-                                  bold={item.bold}
-                                  onRemove={() => this.removeItem(i)}/>
-                    ))}
-                </ul>
+                {/*<button onClick={() => this.playGame()}>Play</button>*/}
+                {/*<button onClick={() => this.newColor()}>new color</button>*/}
+                {/*<button onClick={() => this.addItem()}>Add</button>*/}
+                {/*<ul>*/}
+                    {/*{this.state.list.map((item, i) => (*/}
+                        {/*<TodoItem key={i}*/}
+                                  {/*name={item.name}*/}
+                                  {/*color={item.color}*/}
+                                  {/*bold={item.bold}*/}
+                                  {/*onRemove={() => this.removeItem(i)}/>*/}
+                    {/*))}*/}
+                {/*</ul>*/}
             </div>
         )
     }
 
     playGame() {
-        this.game = new Game();
+
     }
 
     newColor() {
-          this.game.changeColor();
+        // this.game.changeColor();
     }
 
     addItem() {
