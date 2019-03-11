@@ -6,4 +6,8 @@ export class BgCtrl extends Ctrl {
     constructor() {
         super(new BgModel(), new BgView())
     }
+
+    win() {
+        this.model.setWinText();
+    }
 }

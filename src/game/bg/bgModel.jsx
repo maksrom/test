@@ -7,5 +7,7 @@ export class BgModel extends Model {
 
     setWinText() {
         this.text = 'win';
+
+        setTimeout(() => this.setDefaultValues(), 1000)
     }
 }

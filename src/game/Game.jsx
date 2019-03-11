@@ -63,6 +63,10 @@ export class Game {
             this.mainCharacter.moveDown();
         }
 
+        if (this.mainCharacter.model.isWin()) {
+            this.bg.win();
+        }
+
 
         this.ctx.clearRect(0, 0, 300, 300);
         this.items.forEach((item) => item.animate(this.ctx));
