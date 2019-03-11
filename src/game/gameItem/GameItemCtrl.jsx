@@ -1,11 +1,10 @@
 import {GameItemModel} from "./GameItemModel.jsx";
 import {GameItemView} from "./GameItemView.jsx";
+import {Ctrl} from "../mvc/Ctrl.jsx";
 
-export class GameItemCtrl {
+export class GameItemCtrl extends Ctrl {
     constructor(type) {
-
-        this.model = new GameItemModel();
-        this.view = new GameItemView(this.model);
+        super(new GameItemModel(), new GameItemView());
 
         this.model.setType(type);
     }
@@ -23,6 +22,10 @@ export class GameItemCtrl {
     }
 
     animate(ctx) {
-       this.view.animate(ctx);
+       super.animate(ctx);
+
+       if (this.model.isWin()) {
+           this.model.setDefaultValues();
+       }
     }
 }

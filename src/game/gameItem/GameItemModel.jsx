@@ -1,7 +1,9 @@
-export class GameItemModel {
-    constructor() {
+import {Model} from "../mvc/Model.jsx";
+
+export class GameItemModel extends Model {
+    setDefaultValues() {
         this.type = '';
-        this.position = {x: 0, y: 0};
+        this.position = {x: 0, y: this.HEIGH/2};
     }
 
     setType(type) {
@@ -19,5 +21,9 @@ export class GameItemModel {
 
     moveDown() {
         this.position.y += 1;
+    }
+
+    isWin() {
+        return this.position.y < 0 || this.position.y > this.HEIGH;
     }
 }

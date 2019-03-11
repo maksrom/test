@@ -1,4 +1,5 @@
 import {GameItemCtrl} from "./gameItem/GameItemCtrl.jsx";
+import {BgCtrl} from "./bg/bgCtrl.jsx";
 
 var keys = {
     W: false,
@@ -18,7 +19,8 @@ export class Game {
         this.items = [];
 
         this.mainCharacter = new GameItemCtrl('red', [0, 0, 10, 10]);
-        this.items.push(this.mainCharacter);
+        this.bg = new BgCtrl();
+        this.items.push(...[this.mainCharacter, this.bg]);
 
         // Key Codes
         var W = 87;
@@ -61,8 +63,10 @@ export class Game {
             this.mainCharacter.moveDown();
         }
 
+
         this.ctx.clearRect(0, 0, 300, 300);
         this.items.forEach((item) => item.animate(this.ctx));
+
         requestAnimationFrame(() => this.draw());
     }
 }
