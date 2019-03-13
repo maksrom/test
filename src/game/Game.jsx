@@ -11,6 +11,10 @@ var keys = {
 
 export class Game {
     constructor() {
+        const userName = window.localStorage.getItem('userName');
+
+        console.log({userName});
+
         this.canvas = document.getElementById('game');
         this.ctx = this.canvas.getContext('2d');
 
