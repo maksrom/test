@@ -21,8 +21,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-
-                <input type="text" onChange={(e) =>  this.storeData(e.target.value)}/>
+                <input type="text" onChange={(e) => this.storeData(e.target.value)}/>
 
                 <button onClick={() => this.playGame()}>Play</button>
                 <button onClick={() => this.newColor()}>new color</button>
@@ -40,8 +39,8 @@ class App extends React.Component {
         )
     }
 
-    storeData(value) {
-        window.localStorage.setItem('userName', value);
+    storeData(userName) {
+        window.localStorage.setItem('config', JSON.stringify({userName, aaa: 1111}));
     }
 
     playGame() {
