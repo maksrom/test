@@ -17,10 +17,10 @@ export class GameItemCtrl extends Ctrl {
             if (e.keyCode === 83) {
                 this.moveDown();
             }
-        });
 
-        stateMachine.observe('onProgress', () => {
-            console.log('Progreess in geme item!');
+            if (stateMachine.can('start')) {
+                stateMachine.start();
+            }
         });
     }
 
@@ -41,6 +41,10 @@ export class GameItemCtrl extends Ctrl {
 
        if (this.model.isWin()) {
            this.model.setDefaultValues();
+
+           if (stateMachine.can('stop')) {
+               stateMachine.stop();
+           }
        }
     }
 }

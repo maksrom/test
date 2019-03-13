@@ -14,8 +14,11 @@ export class BgCtrl extends Ctrl {
         });
 
         stateMachine.observe('onProgress', () => {
-            console.log('Bg is in progress');
             this.model.setWinText('Game is progress');
+        });
+
+        stateMachine.observe('onEnd', () => {
+            this.model.setWinText('Game is finish');
         });
     }
 

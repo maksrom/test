@@ -3,7 +3,7 @@ import {stateMachine} from "../StateMachine.jsx";
 
 export class BgModel extends Model {
     setDefaultValues() {
-        this.text = stateMachine.state;
+        this.text = '';
     }
 
     setWinText(text) {
