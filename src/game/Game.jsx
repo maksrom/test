@@ -23,32 +23,6 @@ export class Game {
         this.bg = new BgCtrl();
         this.items.push(...[this.mainCharacter, this.bg]);
 
-        // Key Codes
-        var W = 87;
-        var S = 83;
-
-        // Keep track of pressed keys
-
-        // Listen for keydown events
-        document.addEventListener('keydown', function(e) {
-            if (e.keyCode === W) {
-                keys.W = true;
-            }
-            if (e.keyCode === S) {
-                keys.S = true;
-            }
-        });
-
-        // Listen for keyup events
-        document.addEventListener('keyup', function(e) {
-            if (e.keyCode === W) {
-                keys.W = false;
-            }
-            if (e.keyCode === S) {
-                keys.S = false;
-            }
-        });
-
         this.draw();
     }
 
@@ -57,18 +31,6 @@ export class Game {
     }
 
     draw() {
-        if (keys.W) {
-            this.mainCharacter.moveUp();
-        }
-        if (keys.S) {
-            this.mainCharacter.moveDown();
-        }
-
-        if (this.mainCharacter.model.isWin()) {
-            this.bg.win();
-        }
-
-
         this.ctx.clearRect(0, 0, 300, 300);
         this.items.forEach((item) => item.animate(this.ctx));
 

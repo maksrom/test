@@ -9,6 +9,16 @@ export class GameItemCtrl extends Ctrl {
 
         this.model.setType(type);
 
+        // Listen for keydown events
+        document.addEventListener('keydown', (e) => {
+            if (e.keyCode === 87) {
+                this.moveUp();
+            }
+            if (e.keyCode === 83) {
+                this.moveDown();
+            }
+        });
+
         stateMachine.observe('onProgress', () => {
             console.log('Progreess in geme item!');
         });
