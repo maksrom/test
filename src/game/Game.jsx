@@ -1,5 +1,6 @@
 import {GameItemCtrl} from "./gameItem/GameItemCtrl.jsx";
 import {BgCtrl} from "./bg/bgCtrl.jsx";
+import {stateMachine} from "./StateMachine.jsx";
 
 var keys = {
     W: false,

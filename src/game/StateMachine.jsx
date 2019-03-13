@@ -4,8 +4,8 @@ export const stateMachine = new StateMachine(
     {
         init: 'begin',
         transitions: [
-            { name: 'start',     from: 'begin',  to: 'progress' },
-            { name: 'stop',   from: 'progress', to: 'end'  },
+            { name: 'start', from: 'begin',  to: 'progress' },
+            { name: 'stop',  from: 'progress', to: 'end'  },
             { name: 'reset', from: 'end', to: 'begin'    }
         ],
         methods: {
