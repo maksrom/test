@@ -20,5 +20,6 @@ module.exports = {
     },
     plugins: [
         new hwp({template: path.join(__dirname, './src/index.html')})
-    ]
+    ],
+    devtool: "source-map"
 };

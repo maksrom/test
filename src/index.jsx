@@ -2,6 +2,9 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { TodoItem } from './components/TodoItem.jsx';
 import {Game} from "./game/Game.jsx";
+import {stateMachine} from "./game/StateMachine.jsx";
+
+window.stateMachine = stateMachine;
 
 class App extends React.Component {
 
