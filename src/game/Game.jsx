@@ -12,8 +12,10 @@ var keys = {
 export class Game {
     constructor() {
         const config = JSON.parse(window.localStorage.getItem('config'));
+        const sessionStorage = JSON.parse(window.sessionStorage.getItem('config'));
 
         console.log(config['userName']);
+        console.log('sessionStorage', sessionStorage);
 
         this.canvas = document.getElementById('game');
         this.ctx = this.canvas.getContext('2d');

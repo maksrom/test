@@ -41,6 +41,7 @@ class App extends React.Component {
 
     storeData(userName) {
         window.localStorage.setItem('config', JSON.stringify({userName, aaa: 1111}));
+        window.sessionStorage.setItem('config', JSON.stringify({userName, aaa: 1111}));
     }
 
     playGame() {
