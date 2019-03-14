@@ -13,5 +13,13 @@ export class EnemyCtrl extends Ctrl {
         super(new EnemyModel(), new EnemyView());
 
         this.model.setType(type);
+
+        stateMachine.observe('onWin', () => {
+            this.model.setWin();
+        });
+
+        stateMachine.observe('onStart', () => {
+            this.model.setDefaultValues();
+        });
     }
 }

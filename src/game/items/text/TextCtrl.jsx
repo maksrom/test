@@ -3,7 +3,7 @@ import {TextView} from "./TextView.jsx";
 import {Ctrl} from "../mvc/Ctrl.jsx";
 import {stateMachine} from "../../utils/StateMachine.jsx";
 
-/** Enemy controller class which controls main player. */
+/** Text controller class which shows text on win or lose. */
 export class TextCtrl extends Ctrl {
     /**
      * Default constructor.

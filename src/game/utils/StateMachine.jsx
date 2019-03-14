@@ -9,7 +9,7 @@ export const stateMachine = new StateMachine(
             { name: 'playWin',  from: 'progress', to: 'win'  },
             { name: 'playLose',  from: 'progress', to: 'lose'  },
             { name: 'resetWin', from: 'win', to: 'begin'    },
-            { name: 'resetEnd', from: 'lose', to: 'begin'    }
+            { name: 'resetLose', from: 'lose', to: 'begin'    }
         ]
     }
 );

@@ -30,14 +30,23 @@ export class PlayerCtrl extends Ctrl {
             if (stateMachine.can('start')) {
                 stateMachine.start();
             }
+
+            if (stateMachine.can('resetWin')) {
+                stateMachine.resetWin();
+            }
+
+            if (stateMachine.can('resetLose')) {
+                stateMachine.resetLose();
+            }
+
         });
 
         stateMachine.observe('onWin', () => {
-            this.model.stopFire();
+            this.model.setDefaultValues();
         });
 
         stateMachine.observe('onLose', () => {
-            this.model.stopFire();
+            this.model.setDefaultValues();
         });
     }
 }

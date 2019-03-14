@@ -8,7 +8,7 @@ export class PlayerModel extends Model {
         this.width = this.height = 10;
 
         this.fired = false;
-        this.firePos = [data.fireEl.x, data.fireEl.y];
+        this.fireEl = data.fireEl;
     }
 
     /** Sets player type. */
@@ -26,19 +26,15 @@ export class PlayerModel extends Model {
         this.position.y += 1;
     }
 
+    /** Enable fire animation. */
     fire() {
         this.fired = true;
-        data.fireEl.x = this.position.x;
-        data.fireEl.y = this.position.y;
-        this.firePos = [this.position.x, this.position.y];
+        this.fireEl.x = this.position.x;
+        this.fireEl.y = this.position.y;
     }
 
+    /** Updates fire el pos. */
     runFire() {
         data.update();
-        this.firePos[0] = data.fireEl.x;
-    }
-
-    stopFire() {
-        this.setDefaultValues();
     }
 }
