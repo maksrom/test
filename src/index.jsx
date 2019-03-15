@@ -3,6 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { TodoItem } from './components/TodoItem.jsx';
 import {Game} from "./game/Game.jsx";
 import {agent} from "./utils/agent";
+import {Players} from "./components/Players";
 
 class App extends React.Component {
 
@@ -22,20 +23,22 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <input type="text" onChange={(e) => this.storeData(e.target.value)}/>
+                <Players/>
 
-                <button onClick={() => this.playGame()}>Play</button>
-                <button onClick={() => this.newColor()}>new color</button>
-                <button onClick={() => this.addItem()}>Add</button>
-                <ul>
-                    {this.state.list.map((item, i) => (
-                        <TodoItem key={i}
-                                  name={item.name}
-                                  color={item.color}
-                                  bold={item.bold}
-                                  onRemove={() => this.removeItem(i)}/>
-                    ))}
-                </ul>
+                {/*<input type="text" onChange={(e) => this.storeData(e.target.value)}/>*/}
+
+                {/*<button onClick={() => this.playGame()}>Play</button>*/}
+                {/*<button onClick={() => this.newColor()}>new color</button>*/}
+                {/*<button onClick={() => this.addItem()}>Add</button>*/}
+                {/*<ul>*/}
+                    {/*{this.state.list.map((item, i) => (*/}
+                        {/*<TodoItem key={i}*/}
+                                  {/*name={item.name}*/}
+                                  {/*color={item.color}*/}
+                                  {/*bold={item.bold}*/}
+                                  {/*onRemove={() => this.removeItem(i)}/>*/}
+                    {/*))}*/}
+                {/*</ul>*/}
             </div>
         )
     }
