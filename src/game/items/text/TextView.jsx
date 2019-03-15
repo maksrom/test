@@ -1,4 +1,4 @@
-import {View} from "../mvc/View.jsx";
+import {View} from "../mvc/View";
 
 export class TextView extends View {
     /** @inheritDoc */

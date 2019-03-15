@@ -1,6 +1,6 @@
 import {stateMachine} from "./utils/StateMachine";
 
-class Data {
+class GameLogic {
     constructor() {
         this.FULL_WIDTH = 300;
         this.FULL_HEIGH = 300;
@@ -53,4 +53,4 @@ class Data {
 
 }
 
-export const data = new Data();
+export const gameLogic = new GameLogic();

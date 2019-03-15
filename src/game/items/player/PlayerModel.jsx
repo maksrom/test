@@ -1,5 +1,5 @@
 import {Model} from "../mvc/Model.jsx";
-import {data} from "../../Data";
+import {gameLogic} from "../../GameLogic";
 
 export class PlayerModel extends Model {
     /** @inheritDoc */
@@ -8,7 +8,7 @@ export class PlayerModel extends Model {
         this.width = this.height = 10;
 
         this.fired = false;
-        this.fireEl = data.fireEl;
+        this.fireEl = gameLogic.fireEl;
     }
 
     /** Sets player type. */
@@ -35,6 +35,6 @@ export class PlayerModel extends Model {
 
     /** Updates fire el pos. */
     runFire() {
-        data.update();
+        gameLogic.update();
     }
 }

@@ -1,12 +1,12 @@
 import {Model} from "../mvc/Model.jsx";
-import {data} from "../../Data";
+import {gameLogic} from "../../GameLogic";
 
 export class EnemyModel extends Model {
     /** @inheritDoc */
     setDefaultValues() {
-        this.position = {x: data.enemyEl.x, y: data.enemyEl.y};
-        this.width = data.enemyEl.w;
-        this.height = data.enemyEl.h;
+        this.position = {x: gameLogic.enemyEl.x, y: gameLogic.enemyEl.y};
+        this.width = gameLogic.enemyEl.w;
+        this.height = gameLogic.enemyEl.h;
         this.win = false;
     }
 

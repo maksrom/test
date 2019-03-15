@@ -1,12 +1,12 @@
 import {Model} from "../mvc/Model.jsx";
-import {data} from "../../Data";
+import {gameLogic} from "../../GameLogic";
 
 export class TextModel extends Model {
     /** @inheritDoc */
     setDefaultValues() {
         this.text = '';
-        this.w = data.FULL_WIDTH / 2;
-        this.h = data.FULL_HEIGH / 2;
+        this.w = gameLogic.FULL_WIDTH / 2;
+        this.h = gameLogic.FULL_HEIGH / 2;
 
     }
 

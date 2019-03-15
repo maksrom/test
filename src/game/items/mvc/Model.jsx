@@ -1,11 +1,11 @@
-import {data} from "../../Data";
+import {gameLogic} from "../../GameLogic";
 
 /** Model implementation in MVC. */
 export class Model {
 
     constructor() {
-        this.WIDTH = data.FULL_WIDTH;
-        this.HEIGH = data.FULL_HEIGH;
+        this.WIDTH = gameLogic.FULL_WIDTH;
+        this.HEIGH = gameLogic.FULL_HEIGH;
     }
 
     /** Set default model values. */
