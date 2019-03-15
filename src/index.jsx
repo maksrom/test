@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { TodoItem } from './components/TodoItem.jsx';
 import {Game} from "./game/Game.jsx";
+import {agent} from "./utils/agent";
 
 class App extends React.Component {
 
