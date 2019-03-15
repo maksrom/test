@@ -9,10 +9,7 @@ export class Players extends React.Component {
             players: []
         };
 
-        agent.Player.getAll().then((players) => {
-            debugger;
-            this.setState({players})
-        })
+        this.loadAll();
     }
 
     render() {
@@ -23,5 +20,10 @@ export class Players extends React.Component {
                 })}
             </ul>
         )
+    }
+
+    async loadAll() {
+        const players = await agent.Player.getAll();
+        this.setState({players});
     }
 }
