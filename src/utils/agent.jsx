@@ -1,6 +1,12 @@
 import * as superagent from 'superagent';
 
-const ROOT_API = 'https://aaaa-54a89.firebaseio.com';
+let ROOT_API = 'https://aaaa-54a89.firebaseio.com';
+console.log('PRODUCTION');
+
+/* develblock:start */
+ROOT_API = 'aaaa';
+console.log('DEVELOPMENT');
+/* develblock:end */
 
 const Player = {
     getAll: () => superagent.get(`${ROOT_API}/players.json`)
