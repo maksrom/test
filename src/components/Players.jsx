@@ -31,7 +31,9 @@ export class Players extends React.Component {
 
                 <ul>
                     {this.state.players.map((player, i) => {
-                        return (<li key={i}>name: {player.name}, age: {player.age}</li>)
+                        return (<li key={i}>name: {player.name}, age: {player.age}
+                            <button onClick={() => {this.deletePlayer(i)}}>x</button>
+                        </li>)
                     })}
                 </ul>
             </div>
@@ -58,6 +60,13 @@ export class Players extends React.Component {
                this.loadAll();
             }
         )
+    }
+
+    deletePlayer(index) {
+        this.state.players.splice(index, 1);
+        agent.Player.delete(this.state.players, () => {
+            this.loadAll();
+        })
     }
 
     async loadAll() {

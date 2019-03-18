@@ -9,6 +9,14 @@ const Player = {
         superagent.put(`${ROOT_API}/players/${index}.json`)
             .send(players)
             .end(cb)
+    },
+    delete: (players, cb = () => {}) => {
+        superagent.put(`${ROOT_API}/players.json`)
+            .send(players)
+            .end(cb)
+
+        // superagent.del(`${ROOT_API}/players/${index}.json`)
+        //     .end(() => {})
     }
 };
 
