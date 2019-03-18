@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { TodoItem } from './components/TodoItem.jsx';
 import {Game} from "./game/Game.jsx";
 import {agent} from "./utils/agent";
-import {Players} from "./components/Players";
+import {Players} from "./components/Players/Players";
 
 class App extends React.Component {
 

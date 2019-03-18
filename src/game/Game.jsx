@@ -3,6 +3,7 @@ import {EnemyCtrl} from "./items/enemy/EnemyCtrl";
 import {gameLogic} from "./GameLogic";
 import {TextCtrl} from "./items/text/TextCtrl";
 
+
 /**
  * General game class which creates simple canvas 2D context.
  */

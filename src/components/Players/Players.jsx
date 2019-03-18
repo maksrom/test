@@ -1,5 +1,6 @@
 import * as React from 'react';
-import {agent} from "../utils/agent";
+import {agent} from "../../utils/agent";
+import "./Players.scss";
 
 export class Players extends React.Component {
     constructor(p, s) {
@@ -15,7 +16,7 @@ export class Players extends React.Component {
 
     render() {
         return (
-            <div>
+            <div id="players">
                 {JSON.stringify(this.state.newPlayer)}
                 <div>
                     <label>Name: </label>
