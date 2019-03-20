@@ -4,8 +4,8 @@ let ROOT_API = 'https://aaaa-54a89.firebaseio.com';
 console.log('PRODUCTION');
 
 /* develblock:start */
-ROOT_API = 'aaaa';
-console.log('DEVELOPMENT');
+// ROOT_API = 'aaaa';
+// console.log('DEVELOPMENT');
 /* develblock:end */
 
 const Player = {

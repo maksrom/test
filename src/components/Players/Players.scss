@@ -1,3 +1,11 @@
 #players {
-  color: #1ded01
+  color: red;
+}
+
+#players li {
+  color: green;
+}
+
+#players li:first-child {
+  color: yellow;
 }
