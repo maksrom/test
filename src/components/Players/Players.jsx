@@ -18,25 +18,41 @@ export class Players extends React.Component {
         return (
             <div id="players">
 
-                <div className="alert alert-warning alert-dismissible fade show" role="alert">
-                    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-                    <button type="button" className="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                <div className="card">
+                    <div className="card-body">
+                        <form onSubmit={() => this.addNewPlayer()} action="#">
+                            <div className="form-group">
+                                <label htmlFor="name">Name: </label>
+                                <input type="text"
+                                       className="form-control"
+                                       id="name"
+                                       placeholder="my name"
+                                       onChange={(e) => this.changeNewPlayerName(e.target.value)}
+                                />
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="name">Age: </label>
+                                <input type="text"
+                                       className="form-control"
+                                       id="name"
+                                       placeholder="my age"
+                                       onChange={(e) => this.changeNewPlayerAge(e.target.value)}
+                                />
+                            </div>
+
+                            <button type="submit"
+                                    className="btn btn-primary"
+                                    onClick={() => this.addNewPlayer()}
+                            >Add</button>
+
+                        </form>
+                    </div>
+
+
                 </div>
 
-                {JSON.stringify(this.state.newPlayer)}
-                <div>
-                    <label>Name: </label>
-                    <input type="text" onChange={(e) => this.changeNewPlayerName(e.target.value)}/>
-                </div>
 
-                <div>
-                    <label>Age: </label>
-                    <input type="text" onChange={(e) => this.changeNewPlayerAge(e.target.value)}/>
-                </div>
-
-                <button onClick={() => this.addNewPlayer()}>Add</button>
 
                 <ul>
                     {this.state.players.map((player, i) => {
