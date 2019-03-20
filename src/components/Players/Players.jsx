@@ -3,6 +3,9 @@ import {agent} from "../../utils/agent";
 import "./Players.scss";
 
 export class Players extends React.Component {
+
+    root;
+
     constructor(p, s) {
         super(p, s);
 
@@ -14,45 +17,44 @@ export class Players extends React.Component {
         this.loadAll();
     }
 
+
+
     render() {
         return (
-            <div id="players">
+            <div id="players" ref={(el) => this.root = el}>
+                    <div className="card">
+                        <div className="card-body">
+                                <form action="#">
+                                    <div className="form-group row justify-content-center">
+                                        <label htmlFor="name"
+                                               className="col-form-label col-sm-6 col-12"
+                                        >Name: </label>
+                                        <input type="text"
+                                               className="form-control col-sm-6 col-11"
+                                               id="name"
+                                               placeholder="my name"
+                                               onChange={(e) => this.changeNewPlayerName(e.target.value)}
+                                        />
+                                    </div>
 
-                <div className="card">
-                    <div className="card-body">
-                        <form onSubmit={() => this.addNewPlayer()} action="#">
-                            <div className="form-group">
-                                <label htmlFor="name">Name: </label>
-                                <input type="text"
-                                       className="form-control"
-                                       id="name"
-                                       placeholder="my name"
-                                       onChange={(e) => this.changeNewPlayerName(e.target.value)}
-                                />
-                            </div>
+                                    <div className="form-group">
+                                        <label htmlFor="name">Age: </label>
+                                        <input type="text"
+                                               className="form-control"
+                                               id="name"
+                                               placeholder="my age"
+                                               onChange={(e) => this.changeNewPlayerAge(e.target.value)}
+                                        />
+                                    </div>
 
-                            <div className="form-group">
-                                <label htmlFor="name">Age: </label>
-                                <input type="text"
-                                       className="form-control"
-                                       id="name"
-                                       placeholder="my age"
-                                       onChange={(e) => this.changeNewPlayerAge(e.target.value)}
-                                />
-                            </div>
+                                    <button type="submit"
+                                            className="btn btn-primary"
+                                            onClick={() => this.addNewPlayer()}
+                                    >Add</button>
 
-                            <button type="submit"
-                                    className="btn btn-primary"
-                                    onClick={() => this.addNewPlayer()}
-                            >Add</button>
-
-                        </form>
+                                </form>
+                        </div>
                     </div>
-
-
-                </div>
-
-
 
                 <ul>
                     {this.state.players.map((player, i) => {
@@ -78,13 +80,20 @@ export class Players extends React.Component {
     }
 
     addNewPlayer() {
-        agent.Player.add(
-            this.state.newPlayer,
-            this.state.players.length,
-            () => {
-               this.loadAll();
-            }
-        )
+        this.root.classList.add('loading');
+
+        setTimeout(() => {
+            agent.Player.add(
+                this.state.newPlayer,
+                this.state.players.length,
+                () => {
+                    this.loadAll();
+                    this.root.classList.remove('loading');
+                }
+            )
+        }, 3000);
+
+
     }
 
     deletePlayer(index) {

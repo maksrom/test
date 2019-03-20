@@ -1,11 +1,14 @@
-//#players {
-//  color: red;
-//}
-//
-//#players li {
-//  color: green;
-//}
-//
-//#players li:first-child {
-//  color: yellow;
-//}
+#players.loading {
+  animation-duration: 3s;
+  animation-name: myAnimatin;
+}
+
+@keyframes myAnimatin {
+  from {
+    transform: rotate(360deg)
+  }
+
+  to {
+    transform: rotate(0deg)
+  }
+}
