@@ -1,6 +1,4 @@
-import * as Redux from 'redux';
-
-function reducer(store = [], action) {
+export function players(store = ['a', 'b', 'c'], action) {
     if (action.type === 'add') {
         return [...store, action.item];
     }
@@ -13,5 +11,3 @@ function reducer(store = [], action) {
 
     return store;
 }
-
-export const playerStore = Redux.createStore(reducer);

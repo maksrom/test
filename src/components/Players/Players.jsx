@@ -1,9 +1,9 @@
 import * as React from 'react';
 import {agent} from "../../utils/agent";
 import "./Players.scss";
+import {connect} from "react-redux";
 
-export class Players extends React.Component {
-
+class PlayersClass extends React.Component {
     root;
 
     constructor(p, s) {
@@ -15,11 +15,14 @@ export class Players extends React.Component {
         };
 
         this.loadAll();
+
+        console.log(this.props);
+        debugger;
     }
 
-
-
     render() {
+        console.log(this.state);
+
         return (
             <div id="players" ref={(el) => this.root = el}>
                     <div className="card">
@@ -108,3 +111,14 @@ export class Players extends React.Component {
         this.setState({players});
     }
 }
+
+export const Players = connect(
+    function (store) {
+        return {
+            playersStore: store
+        }
+    },
+    (dispach) => ({
+        add: (item = 'k') => dispach({type: 'add', item})
+    })
+)(PlayersClass);
