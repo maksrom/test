@@ -7,9 +7,13 @@ class PlayersClass extends React.Component {
         return (
             <div id="players">
                 <ul>
-                    {this.props.playersStore.map((player, i) => {
+                    {this.props.playersStore.map((player, index) => {
                         return (
-                            <li key={i}>name: {player}
+                            <li key={index}>
+                                <span>name: {player}</span>
+                                <input value={player} onChange={(evt) => {
+                                    this.props.edit(index, evt.target.value);
+                                }}/>
                                 {/*<button onClick={() => {this.deletePlayer(i)}}>x</button>*/}
                             </li>
                         )
@@ -24,5 +28,7 @@ export const Players = connect(
     (store) => ({
         playersStore: store
     }),
-    () => ({})
+    (dipach) => ({
+        edit: (index, newValue) => dipach({ type: 'edit', index, newValue })
+    })
 )(PlayersClass);

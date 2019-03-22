@@ -9,5 +9,11 @@ export function players(store = ['a', 'b', 'c'], action) {
         return storeCopy;
     }
 
+    if (action.type === 'edit') {
+        const storeCopy = [...store];
+        storeCopy[action.index] = action.newValue;
+        return storeCopy;
+    }
+
     return store;
 }

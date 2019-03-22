@@ -6,6 +6,7 @@ import {Players} from "./components/Players/Players";
 import {Provider} from "react-redux";
 import {players} from "./reducers/playersStore";
 import {CreatePlayer} from "./components/CreatePlayer";
+import {DeletePlayer} from "./components/Players/DeletePlayer";
 
 const store = Redux.createStore(players);
 
@@ -20,6 +21,7 @@ class App extends React.Component {
             <Provider store={store}>
                 <div className="container">
                     <CreatePlayer/>
+                    <DeletePlayer/>
                     <Players/>
                 </div>
             </Provider>
