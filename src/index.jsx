@@ -5,6 +5,7 @@ import {Game} from "./game/Game.jsx";
 import {Players} from "./components/Players/Players";
 import {Provider} from "react-redux";
 import {players} from "./reducers/playersStore";
+import {CreatePlayer} from "./components/CreatePlayer";
 
 const store = Redux.createStore(players);
 
@@ -17,7 +18,10 @@ class App extends React.Component {
     render() {
         return (
             <Provider store={store}>
-                <Players/>
+                <div className="container">
+                    <CreatePlayer/>
+                    <Players/>
+                </div>
             </Provider>
         )
     }
