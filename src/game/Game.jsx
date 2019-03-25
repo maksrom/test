@@ -9,9 +9,11 @@ import {TextCtrl} from "./items/text/TextCtrl";
  */
 export class Game {
     /** Default constructor. */
-    constructor() {
-        this.canvas = document.getElementById('game');
+    constructor(root) {
+        this.canvas = document.createElement('canvas');
         this.ctx = this.canvas.getContext('2d');
+        root.appendChild(this.canvas);
+        this.canvas.style.border = '1px solid red';
 
         this.canvas.width = gameLogic.FULL_WIDTH;
         this.canvas.height = gameLogic.FULL_HEIGH;
