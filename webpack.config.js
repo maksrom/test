@@ -21,7 +21,7 @@ module.exports = (env, options) => {
                 {
                     test: /\.(jsx)$/,
                     exclude: /node_modules/,
-                    use: options.mode === 'production' ? ["webpack-strip-block", "babel-loader"] : ["babel-loader"]
+                    use: options.mode === 'production' ? ["webpack-strip-block", "babel-loader"] : ["babel-loader"],
                 }
             ]
         },

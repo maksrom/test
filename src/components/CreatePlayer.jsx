@@ -2,7 +2,7 @@ import * as React from 'react';
 import {connect} from "react-redux";
 
 
-class CreatePlayerClass extends React.Component{
+export class CreatePlayer extends React.Component{
     constructor(p, s) {
         super(p, s);
 
@@ -41,9 +41,9 @@ class CreatePlayerClass extends React.Component{
         )
     }
 }
-
-export const CreatePlayer = connect(
-    () => ({}),
-    (dispach) => ({add: (name) => dispach({type: 'add', item: name})})
-)(CreatePlayerClass);
-
+//
+// export const CreatePlayer = connect(
+//     () => ({}),
+//     (dispach) => ({add: (name) => dispach({type: 'add', item: name})})
+// )(CreatePlayerClass);
+//

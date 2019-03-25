@@ -1,7 +1,8 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 
-class DeletePlayerComponent extends React.Component {
+
+export class DeletePlayerComponent extends React.Component {
     render() {
         return (
             <div>
@@ -12,11 +13,11 @@ class DeletePlayerComponent extends React.Component {
     }
 }
 
-export const DeletePlayer = connect(
-    () => ({}) ,
-    (dispach) => ({
-        del: () => dispach({
-            type: 'delete'
-        })
-    })
-)(DeletePlayerComponent);
+// export const DeletePlayer = connect(
+//     () => ({}) ,
+//     (dispach) => ({
+//         del: () => dispach({
+//             type: 'delete'
+//         })
+//     })
+// )(DeletePlayerComponent);
