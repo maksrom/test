@@ -9,11 +9,13 @@ import {players} from "./reducers/playersStore";
 import {CreatePlayer} from "./components/CreatePlayer";
 import {DeletePlayer} from "./components/Players/DeletePlayer";
 import {Users} from "./mobx-store/Users";
+import {Score} from "./mobx-store/Score";
+import {CreateUser} from "./components/Players/CreateUser";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import {PlayersPage} from "./components/PlayersPage";
+import {HashRouter} from 'react-router-dom'
 
 // const store = Redux.createStore(players);
-
-
-const userMobxStore = new Users();
 
 class App extends React.Component {
     constructor(props, state) {
@@ -23,12 +25,15 @@ class App extends React.Component {
 
     render() {
         return (
-            <Provider userMobxStore={userMobxStore}>
-                <div className="container">
-                    {/*<CreatePlayer/>*/}
-                    {/*<DeletePlayer/>*/}
-                    <Players/>
-                </div>
+            <Provider users={new Users()}
+                        score={new Score()}>
+                <HashRouter>
+                    <Link to="/players">Players</Link>
+                    <br/>
+                    <Link to="/123">123</Link>
+                    <Route path="/players" component={PlayersPage}/>
+                    <Route path="/123" component={CreatePlayer}/>
+                </HashRouter>
             </Provider>
         )
     }

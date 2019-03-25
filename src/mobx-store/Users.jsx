@@ -1,11 +1,25 @@
 import {observable, action} from "mobx";
+import {agent} from "../utils/agent";
 
 export class Users {
     @observable
-    users = ['aa', 'bb'];
+    list = [];
 
-    @action
+    @observable
+    articles = [{id: 1, name: 222}];
+
+    addNewArticle(name = 'name') {
+        this.articles.push({id: 2, name});
+    }
+
+    async load() {
+        var players = await agent.Player.getAll();
+        this.list = players.map((el) => el.name)
+    }
+
     addUser() {
-        this.users.push('cc');
+        setTimeout(() => {
+            this.list.push('sss');
+        }, 1000)
     }
 }
